@@ -65,6 +65,16 @@ Use hint for help that’s relevant to the majority of users - like how their in
 
 {{ example({group: "components", item: "text-input", example: "input-hint-text", html: true, nunjucks: true, open: false, size: "s"}) }}
 
+### Using the autocomplete attribute
+
+Use the `autocomplete` attribute on text inputs to help users complete forms more quickly. This lets the browser automatically fill in the input on the user's behalf if the user has entered it previously.
+
+You must do this to meet [WCAG 2.1 Level AA](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html).
+
+Read input purposes for a [complete list of attributes](https://www.w3.org/TR/WCAG21/#input-purposes).
+
+{{ example({group: "components", item: "text-input", example: "input-autocomplete-attribute", html: true, nunjucks: true, open: false, size: "s"}) }}
+
 ### Do not disable copy and paste
 
 Users often need to copy and paste information into a text input, so do not stop them from doing this.
