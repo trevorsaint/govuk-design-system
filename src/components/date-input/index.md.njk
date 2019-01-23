@@ -9,7 +9,7 @@ layout: layout-pane.njk
 
 {% from "_example.njk" import example %}
 
-Use the date input component to help users enter a memorable date.
+Use the date input component to help users enter a memorable date or one they can easily look up.
 
 {{ example({group: "components", item: "date-input", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
 
@@ -38,6 +38,16 @@ There are 2 ways to use the date input component. You can use HTML or, if you’
 {{ example({group: "components", item: "date-input", example: "default", html: true, nunjucks: true, open: false, size: "s", id: "default-2"}) }}
 
 Never automatically tab users between the fields of the Date input because this can be confusing and may clash with normal keyboard controls.
+
+### Using the autocomplete attribute for a date of birth
+
+Use the `autocomplete` attribute on date inputs when you're asking for a date of birth to help users complete forms more quickly. This lets the browser automatically fill in the input on the user's behalf if the user has entered it previously.
+
+You must do this to meet [WCAG 2.1 Level AA](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html).
+
+Read input purposes for a [complete list of attributes](https://www.w3.org/TR/WCAG21/#input-purposes).
+
+{{ example({group: "components", item: "date-input", example: "date-of-birth", html: true, nunjucks: true, open: false, size: "s", id: "default-2"}) }}
 
 ### Error messages
 
