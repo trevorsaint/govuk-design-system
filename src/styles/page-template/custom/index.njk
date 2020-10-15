@@ -6,19 +6,25 @@ ignore_in_sitemap: true
 
 {# Example that changes every setting in the template #}
 
-{% from "back-link/macro.njk" import govukBackLink %}
-{% from "skip-link/macro.njk" import govukSkipLink %}
-{% from "header/macro.njk" import govukHeader %}
-{% from "phase-banner/macro.njk" import govukPhaseBanner %}
-{% from "footer/macro.njk" import govukFooter %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/skip-link/macro.njk" import govukSkipLink %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
-{% extends "template.njk" %}
+{% extends "govuk/template.njk" %}
 
 {% set htmlClasses = "app-html-class" %}
 {% set htmlLang = "en" %}
 {% set assetPath = "" %}
+{% set assetUrl = "https://example.com" %}
 {% set themeColor = "blue" %}
 {% set bodyClasses = "app-body-class" %}
+{% set bodyAttributes = {
+  'data-test': 'My value',
+  'data-other': 'report:details'
+} %}
+{% set containerClasses = "app-width-container" %}
 
 {% block pageTitle %}GOV.UK - Customised page template{% endblock %}
 
@@ -29,10 +35,10 @@ ignore_in_sitemap: true
 {% block head %}
   <meta name="robots" content="noindex, nofollow">
   <!--[if !IE 8]><!-->
-    <link href="{{ getFingerprint('stylesheets/main.css') }}" rel="stylesheet" media="all" />
+    <link href="{{ getFingerprint('stylesheets/main.css') }}" rel="stylesheet" media="all">
   <!--<![endif]-->
   <!--[if lt IE 9]>
-    <link href="{{ getFingerprint('stylesheets/main-ie8.css') }}" rel="stylesheet" media="all" />
+    <link href="{{ getFingerprint('stylesheets/main-ie8.css') }}" rel="stylesheet" media="all">
     <script src="{{ getFingerprint('javascripts/head-ie8.js') }}"></script>
   <![endif]-->
   <script src="/javascripts/vendor/modernizr.js"></script>
@@ -51,7 +57,7 @@ ignore_in_sitemap: true
 {% block header %}
   {{ govukHeader({
     homepageUrl: "#",
-    containerClasses: "govuk-width-container",
+    containerClasses: "app-width-container",
     serviceName: "Service name",
     serviceUrl: "#",
     navigation: [
@@ -97,6 +103,7 @@ ignore_in_sitemap: true
 
 {% block footer %}
   {{ govukFooter({
+    containerClasses: "app-width-container",
     meta: {
       items: [
         {

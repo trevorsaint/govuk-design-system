@@ -1,10 +1,9 @@
 ---
-title: Two-thirds / One-third – Layout
+title: Common two-thirds / One-third – Layout
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 <div class="govuk-width-container">
   {{ govukBackLink({
@@ -20,7 +19,7 @@ ignore_in_sitemap: true
       </div>
 
       <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-m">One-third column</h3>
+        <h2 class="govuk-heading-m">One-third column</h2>
         <p class="govuk-body">This is a paragraph inside a one-third wide column</p>
       </div>
     </div>

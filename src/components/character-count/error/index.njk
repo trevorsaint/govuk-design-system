@@ -1,9 +1,9 @@
 ---
-title: Character count
+title: Error – Character count
 layout: layout-example.njk
 ---
 
-{% from "character-count/macro.njk" import govukCharacterCount %}
+{% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
 {{ govukCharacterCount({
   id: "exceeding-characters",
@@ -14,6 +14,6 @@ layout: layout-example.njk
     text: "Enter a job description"
   },
   errorMessage: {
-    text: "Job description must be 350 characters or less"
+    text: "Job description must be 350 characters or fewer"
   }
 }) }}

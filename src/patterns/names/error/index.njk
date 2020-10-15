@@ -1,10 +1,9 @@
 ---
 title: Name input with errors
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "input/macro.njk" import govukInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
   label: {
@@ -12,7 +11,9 @@ ignore_in_sitemap: true
   },
   id: "full-name",
   name: "full-name",
+  autocomplete: "name",
   errorMessage: {
     text: "Enter your full name"
-  }
+  },
+  spellcheck: false
 }) }}

@@ -1,16 +1,12 @@
-$govuk-page-width: 1100px !default;
-
-@import "govuk-frontend/all";
+@import "govuk-frontend/govuk/all";
 
 // App-specific variables
 $app-light-grey: #f8f8f8;
-$app-code-color: #dd1144;
+$app-code-color: #d13118;
 
 // App-specific components
 @import "components/back-to-top";
-@import "components/banner";
 @import "components/contact-panel";
-@import "components/cookie-banner";
 @import "components/example";
 @import "components/footer";
 @import "components/header";
@@ -22,57 +18,26 @@ $app-code-color: #dd1144;
 @import "components/options";
 @import "components/page-navigation";
 @import "components/pane";
+@import "components/phase-banner";
 @import "components/site-search";
 @import "components/subnav";
 @import "components/tabs";
 @import "components/table";
 @import "components/tag";
 
-body {
-  margin: 0;
-}
-
-.app-hide-mobile {
-  @include govuk-media-query($until: tablet) {
-    display: none;
-  }
-}
-
-.app-hide-tablet {
-  @include govuk-media-query($from: tablet) {
-    display: none;
-  }
-}
-
-.app-hide-desktop {
-  @include govuk-media-query($from: desktop) {
-    display: none;
-  }
-}
-
-// This is consistent with Elements - will be changed in FE
-[class*="govuk-grid-column"] {
-  @include govuk-media-query($until: desktop) {
-    padding: 0 $govuk-gutter-half;
-  }
-}
-
-// This is consistent with Elements - will be changed in FE
-.govuk-grid-column-one-third,
-.govuk-grid-column-two-thirds,
-.govuk-grid-column-one-quarter {
-  @include govuk-media-query($until: desktop) {
-    width: 100%;
-  }
+// We don't change the global width container width so that examples are the current width.
+.app-width-container {
+  @include govuk-width-container(1100px);
 }
 
 .app-content {
 
-  padding: govuk-spacing(3) govuk-spacing(0);
+  padding: govuk-spacing(3) govuk-spacing(0) govuk-spacing(4);
 
   @include govuk-media-query($from: tablet) {
     padding: govuk-spacing(6);
     padding-right: 0;
+    padding-bottom: govuk-spacing(8);
   }
 
   h1 {
@@ -99,27 +64,39 @@ body {
     max-width: 38em;
   }
 
-  video,
+  .app-video__player,
   img {
     box-sizing: border-box;
     width: 100%;
+    max-width: 722px;
     height: auto;
     @include govuk-responsive-margin(2, "top");
-    @include govuk-responsive-margin(6, "bottom");
     border: 1px solid $govuk-border-colour;
   }
 
   img {
     padding: govuk-spacing(2);
+    @include govuk-responsive-margin(6, "bottom");
   }
 
-  video {
-    @include govuk-focusable;
+  .app-video__player {
+    @include govuk-responsive-margin(2, "bottom");
   }
+
+  .app-video__player:focus {
+    border-color: $govuk-focus-text-colour;
+    outline: $govuk-focus-width solid $govuk-focus-text-colour;
+    box-shadow: 0 0 0 ($govuk-focus-width * 2) $govuk-focus-colour;
+  }
+
+  .app-video__description {
+    @include govuk-responsive-margin(6, "bottom");
+  }
+
 
   // IE8 does not support the video element, so we hide the element entirely.
   @if $govuk-is-ie8 == true {
-    video {
+    .app-video {
       display: none;
     }
   }
@@ -142,27 +119,8 @@ body {
   }
 }
 
-.app-content__header {
-  @include govuk-font(24);
-}
-
-.app-content__heading {
-  margin-top: 0;
-  margin-bottom: govuk-spacing(6);
-}
-
-.app-content__section-heading {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: $govuk-secondary-text-colour;
-}
-
 .app-example-page {
-  padding: govuk-spacing(6) * 2 govuk-spacing(6) govuk-spacing(6);
-}
-
-.app-example-page--full-page {
-  padding: 0;
+  padding: govuk-spacing(6);
 }
 
 // Copy button
@@ -170,21 +128,38 @@ body {
   $copy-button-colour: #00823b;
 
   @include govuk-font(16);
-  @include govuk-focusable;
   position: absolute;
   z-index: 1;
-  top: govuk-spacing(4);
-  right: govuk-spacing(4);
-  min-width: 80px;
-  padding: 4px 10px 0;
+  top: govuk-spacing(2);
+  right: govuk-spacing(2);
+  min-width: 110px;
+  padding: 3px 10px;
   border: 1px solid $copy-button-colour;
   color: $copy-button-colour;
   background-color: govuk-colour("white");
-  box-shadow: 0 0 0 4px govuk-colour("grey-4");
+  box-shadow: 0 2px 0 0 govuk-colour("green");
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   cursor: pointer;
+
+  &:focus:not(:hover) {
+    color: $govuk-focus-text-colour;
+    background-color: $govuk-focus-colour;
+    box-shadow: 0 2px 0 0 $govuk-focus-text-colour;
+  }
+
+  &:active,
+  &:focus {
+    padding: 2px 10px; // Counter increased border size
+    border: 2px solid $govuk-focus-colour;
+    outline: 2px solid transparent;
+    box-shadow: none;
+  }
+
+  &:active {
+    margin-top: 2px;
+    box-shadow: none;
+  }
 }
 
 $colour-list-breakpoint: 980px;
@@ -243,7 +218,7 @@ $colour-list-breakpoint: 980px;
 }
 
 .app-swatch-border {
-  border-color: govuk-colour("grey-2");
+  border-color: govuk-colour("mid-grey");
 }
 
 .app-colour-list-column--name {
@@ -293,7 +268,7 @@ td code,
 p code {
   padding: 0 govuk-spacing(1);
   color: $app-code-color;
-  background-color: govuk-colour("grey-4");
+  background-color: govuk-colour("light-grey");
 }
 
 .app-prose-scope {
@@ -344,5 +319,20 @@ p code {
     @extend %govuk-section-break;
     @extend %govuk-section-break--visible;
     @extend %govuk-section-break--xl;
+  }
+
+  pre + h2 {
+    padding-top: govuk-spacing(4);
+  }
+
+  pre + h3,
+  pre + h4 {
+    padding-top: govuk-spacing(2);
+  }
+
+  // Ensure that content at the bottom of the page does not have margins
+  // so that they line up with the back to top link.
+  > :last-child {
+    margin-bottom: 0;
   }
 }

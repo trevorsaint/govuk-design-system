@@ -1,11 +1,10 @@
 ---
 title: Linking from the error summary to an answer that uses a single field
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "error-summary/macro.njk" import govukErrorSummary %}
-{% from "input/macro.njk" import govukInput %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukErrorSummary({
   "titleText": "There is a problem",
@@ -17,7 +16,7 @@ ignore_in_sitemap: true
   ]
 }) }}
 
-<h1 class="govuk-heading-xl">Your details</h1>
+<h1 class="govuk-heading-l">Your details</h1>
 
 {{ govukInput({
   label: {

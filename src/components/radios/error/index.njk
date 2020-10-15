@@ -1,10 +1,9 @@
 ---
 title: Inline radios with error
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "radios/macro.njk" import govukRadios %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
   classes: "govuk-radios--inline",
@@ -14,7 +13,7 @@ ignore_in_sitemap: true
     legend: {
       text: "Have you changed your name?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
+      classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {

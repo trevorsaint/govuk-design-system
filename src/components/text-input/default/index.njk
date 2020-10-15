@@ -3,12 +3,14 @@ title: Text input
 layout: layout-example.njk
 ---
 
-{% from "input/macro.njk" import govukInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
   label: {
-    text: "Full name"
+    text: "What is the name of the event?",
+    classes: "govuk-label--l",
+    isPageHeading: true
   },
-  id: "name",
-  name: "name"
+  id: "event-name",
+  name: "event-name"
 }) }}

@@ -1,10 +1,9 @@
 ---
 title: Phase banner with beta text
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"

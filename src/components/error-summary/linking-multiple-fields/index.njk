@@ -1,18 +1,17 @@
 ---
 title: Linking from the error summary to an answer that uses multiple fields
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "date-input/macro.njk" import govukDateInput %}
-{% from "error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
 {{ govukErrorSummary({
   "titleText": "There is a problem",
   "errorList": [
     {
-      "text": "Date of birth must include a year",
-      "href": "#dob-year"
+      "text": "Passport issue date must include a year",
+      "href": "#passport-issued-year"
     }
   ]
 }) }}
@@ -21,14 +20,14 @@ ignore_in_sitemap: true
   fieldset: {
     legend: {
       isPageHeading: true,
-      text: 'What is your date of birth?',
-      classes: 'govuk-fieldset__legend--xl'
+      text: 'When was your passport issued?',
+      classes: 'govuk-fieldset__legend--l'
     }
   },
-  id: 'dob',
-  name: 'dob',
+  id: 'passport-issued',
+  namePrefix: 'passport-issued',
   errorMessage: {
-    text: "Date of birth must include a year"
+    text: "Passport issue date must include a year"
   },
   items: [
     {

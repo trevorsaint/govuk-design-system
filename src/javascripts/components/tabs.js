@@ -1,7 +1,7 @@
-import 'govuk-frontend/vendor/polyfills/Function/prototype/bind'
-import 'govuk-frontend/vendor/polyfills/Element/prototype/classList'
-import 'govuk-frontend/vendor/polyfills/Event'
-import common from 'govuk-frontend/common'
+import 'govuk-frontend/govuk/vendor/polyfills/Function/prototype/bind'
+import 'govuk-frontend/govuk/vendor/polyfills/Element/prototype/classList'
+import 'govuk-frontend/govuk/vendor/polyfills/Event'
+import common from 'govuk-frontend/govuk/common'
 
 var nodeListForEach = common.nodeListForEach
 
@@ -43,8 +43,18 @@ AppTabs.prototype.activateAndToggle = function (event) {
   event.preventDefault()
   var $currentToggler = event.target
   var $currentTogglerSiblings = this.$module.querySelectorAll('[href="' + $currentToggler.hash + '"]')
-  var $tabContainer = this.$module.querySelector($currentToggler.hash)
+  var $tabContainer
+
+  try {
+    $tabContainer = this.$module.querySelector($currentToggler.hash)
+  } catch (exception) {
+    throw new Error('Invalid example ID given: ' + exception)
+  }
   var isTabAlreadyOpen = $currentToggler.getAttribute('aria-expanded') === 'true'
+
+  if (!$tabContainer) {
+    return
+  }
 
   if (isTabAlreadyOpen) {
     $tabContainer.classList.add(tabContainerHiddenClass)
@@ -86,12 +96,6 @@ AppTabs.prototype.resetTabs = function () {
     // desktop and mobile
     $tabToggler.parentNode.classList.remove(tabsItemCurrentClass, headingItemCurrentClass)
   })
-}
-
-// Close current container on click
-AppTabs.prototype.clickCloseContainer = function (event) {
-  event.preventDefault()
-  this.resetTabs()
 }
 
 AppTabs.prototype.handleClick = function (event) {

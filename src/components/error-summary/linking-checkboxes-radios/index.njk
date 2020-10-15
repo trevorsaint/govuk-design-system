@@ -1,11 +1,10 @@
 ---
 title: Linking from the error summary to checkboxes
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "error-summary/macro.njk" import govukErrorSummary %}
-{% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {{ govukErrorSummary({
   "titleText": "There is a problem",
@@ -24,7 +23,7 @@ ignore_in_sitemap: true
     legend: {
       text: "What is your nationality?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
+      classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {

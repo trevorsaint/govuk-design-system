@@ -1,45 +1,15 @@
 ---
-title: Labels, legends and headings
+title: Legends as page headings - Making labels and legends headings
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "input/macro.njk" import govukInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
-{% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {{ govukCheckboxes({
   idPrefix: "checkbox",
   name: "checkbox",
-  fieldset: {
-    legend: {
-      text: "govuk-fieldset__legend--xl",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  hint: {
-    text: "This example shows an <h1> inside a <legend> with the class of govuk-fieldset__legend--xl."
-  },
-  items: [
-    {
-      value: "checkbox",
-      text: "Checkbox 1"
-    },
-    {
-      value: "checkbox",
-      text: "Checkbox 2"
-    },
-    {
-      value: "checkbox",
-      text: "Checkbox 3"
-    }
-  ]
-}) }}
-
-{{ govukCheckboxes({
-  idPrefix: "checkbox-2",
-  name: "checkbox-2",
   fieldset: {
     legend: {
       text: "govuk-fieldset__legend--l",
@@ -65,3 +35,4 @@ ignore_in_sitemap: true
     }
   ]
 }) }}
+

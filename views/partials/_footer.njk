@@ -1,8 +1,8 @@
-{% from "footer/macro.njk" import govukFooter %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {{ govukFooter({
   "classes": "app-footer app-footer--full",
-  "containerClasses" : "app-site-width-container",
+  "containerClasses" : "app-width-container",
   "navigation": [
     {
       "title": "Related resources",
@@ -22,17 +22,18 @@
   "meta": {
     "items": [
       {
-        "href": "/sitemap",
-        "text": "Sitemap"
+        "href": "/accessibility",
+        "text": "Accessibility"
       },
       {
-        "href": "/cookies",
-        "text": "Cookies"
+        "href": "/sitemap",
+        "text": "Sitemap"
       },
       {
         "href": "/privacy-policy",
         "text": "Privacy policy"
       }
-    ]
+    ],
+    "html": 'Built by the <a href="/design-system-team" class="govuk-footer__link">GOV.UK Design System team</a>'
   }
 }) }}

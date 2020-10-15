@@ -1,10 +1,9 @@
 ---
 title: Error message with Legend
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {{ govukCheckboxes({
   idPrefix: "nationality",
@@ -13,7 +12,7 @@ ignore_in_sitemap: true
     legend: {
       text: "What is your nationality?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
+      classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {

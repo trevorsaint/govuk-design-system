@@ -1,4 +1,4 @@
-import 'govuk-frontend/vendor/polyfills/Event'
+import 'govuk-frontend/govuk/vendor/polyfills/Event'
 
 function ExamplePage ($module) {
   this.$module = $module
@@ -21,5 +21,4 @@ ExamplePage.prototype.preventFormSubmission = function ($form) {
   })
 }
 
-var $examplePageContainer = document.querySelector('.app-example-page')
-new ExamplePage($examplePageContainer).init()
+new ExamplePage(document).init()

@@ -18,13 +18,10 @@ env:
   # CloudFoundry credentials for deployment
   - CF_API="https://api.cloud.service.gov.uk"
   - CF_ORG="govuk-design-system"
-  - CF_SPACE="production"
-  - CF_USERNAME="design-system-deploy-production@digital.cabinet-office.gov.uk"
+  - CF_SPACE="design-system"
+  - CF_USERNAME="design-system-deploy+design-system@digital.cabinet-office.gov.uk"
   # CF_PASSWORD
-  - secure: IfyAM/Wi9ABfpiSaVdjMaNY8RtAw+0EZrBllDDjOY6VqFAPcJApei+MqQWzLkCFc2MwXsZ0K7BA76eJpefIBbs/6wUpypqB47cAjd8nkZkiHeLhvKeCLadkWsE4LmrCGgpZLBMz/PbMpi4bBlqgzP/lEkfUAaTl/iLMVBjJPrTxB8Q2QPKUxkPvmGkM8eblKMrwWzP3zKlQduMaDYRDMv/36swjbfD3/S/TmZxdLYgXfZLr84S6f2A2iWs+jrcbMNZLKCWCpqdqVHKQbvhdwz2blZcFXbMDaaZXJLotJm+hS2MiLriWXDwVeI/SF/qc9GpF6y+ssWDuBtmpwIMDH26NuNpKJriflA9MidtYRNWeFR+hXrUIc3pcoDFii/m8FSiTJ5qCYyZ9STqZyYVKR3DAwAy1el7mq2XbrMEZX+I8OynRspTIYd+09oewMxjtaLeedZ2Kq3F8l+BY+rdFcvZlM4RooGrrtNrZfp3GnpUSke2VcAeVJaQEC3zD8/Se3bpUMVfvJkyEVolAYKvNb6/nlrJix9OJfWsExEUd6WDWnXDLg1Oe5WTa7DWVsVz6XQGAIDGwYBFT2WIkpv7bA5ngG4YN4UichkZCtzmdSyEqCEFlnBDwH/6KN4+7GVBNf4AlH5TgffFlBnImJr0wTT+PRtW7NAn54jq8knymJtyY=
-
-  # Google Tag Manager ID – different for production and preview builds
-  - GTM_TAG="GTM-53XG2JT"
+  - secure: "N1ybDZ35FJ63/oGDfO8pofzTdFicyRHqx/H6Y6vsm+0WedU9bc4mTQ2qBQydYIsjQH+V17EIW+BjomL2ozivtcrf5ZBMvVdXJFk/7U2ii2LifimAXa1j2cQNZnOoviAjJIUPn90QkkjCyZlEe8vp97RYHHhDc17NGacttAvZmzVlPJB9KlwM6PGf7L9HfID2B2vEx5q/DXZcpl6uNJUPXI0/Clnjxl5K0RdvGbyNHvN7N3/cFg97NFe0wbBT64kcxo8HeWLsWeYjMEx3TlwhOJ0z5zisjoCFTI34aUxnV8HRt1BHwU8kghistaLKXc5hpQFnCD6ZVIK23Vmzgg4WheWUvkG14D8E6RggHaKizFgNemz7N0wE9ZwUSrT6lRMUfINUQfDPhFXUPKMTTttyNTRCXmFy7gklu6wh/kG/kFNJhFEZ7SIK0+g33RMV95taolNwsZp4UuKqJwo6TageMeFcpTG0yJ3CgJI6AVxMHNvgunAT7rNdCoc7h8+gBMBMShOw9vTkcPTpdu8Z78b4LMn7GmKaW/PFDfU3EcOsQ6kdmXoayDErXePwLXr/ZYaC9vG+1cPqaTcQ7s5lFismkfwK8XPJfZBCWNamXwLftEuDqTegZz84YwJnbK26JRSjWo50SlEHmbKnM+CWGnreV2YBQGdhupJvtoHFOlYrGqg="
 
 install:
   - npm install --no-optional

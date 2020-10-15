@@ -3,14 +3,14 @@ title: Error summary
 layout: layout-example.njk
 ---
 
-{% from "error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
 {{ govukErrorSummary({
   titleText: "There is a problem",
   errorList: [
     {
-      text: "Date of birth must be in the past",
-      href: "#dob-error"
+      text: "The date your passport was issued must be in the past",
+      href: "#passport-issued-error"
     },
     {
       text: "Enter a postcode, like AA1 1AA",

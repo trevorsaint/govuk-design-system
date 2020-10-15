@@ -1,10 +1,9 @@
 ---
 title: Postcode error
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "input/macro.njk" import govukInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
   label: {
@@ -16,5 +15,6 @@ ignore_in_sitemap: true
   value: "Not a postcode",
   errorMessage: {
     text: "Enter a real postcode"
-  }
+  },
+  autocomplete: "postal-code"
 }) }}

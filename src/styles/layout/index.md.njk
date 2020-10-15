@@ -11,11 +11,14 @@ show_page_nav: true
 
 ## Screen size
 
-Design for small screens first using a single-column layout.
+Design for small screens first, starting with a single-column layout.
+
+For most types of page, we recommend using either a 'two-thirds' or a 'two-thirds / one third layout'. That stops lines of text getting so long that the page becomes difficult to read on desktop devices.
 
 Never make assumptions about what devices people are using. Design for different screen sizes rather than specific devices.
 
 The default maximum page width is 1020px, but you can make it wider if your content requires it.
+
 
 ## Common layouts
 
@@ -50,13 +53,16 @@ If your design requires them, you should place components such as [breadcrumbs](
 
 Within `govuk-width-container` you should add the `govuk-main-wrapper` class to your `<main>` element. This adds responsive padding to the top and bottom of the page and will be the container for your main content.
 
+If you’re not using the [breadcrumbs](../../components/breadcrumbs), [back link](../../components/back-link) or [phase banner](../../components/phase-banner) components in your design, add the correct amount of vertical padding above the content by adding one of the following to your `<main>` element:
+
+- the `govuk-main-wrapper--auto-spacing` class
+- the `govuk-main-wrapper--l class` - if `govuk-main-wrapper--auto-spacing` does not work for your service
+
 ### Exploded view of page wrappers
 
 {{ example({group: "styles", item: "layout", example: "layout-wrappers", html: true, open: true, size: "l"}) }}
 
 ### Exploded view of page wrappers without a back link, breadcrumbs or phase banner
-
-If you’re not using the [breadcrumbs](../../components/breadcrumbs), [back link](../../components/back-link) or [phase banner](../../components/phase-banner) components in your design, use a modifier class `govuk-main-wrapper--l` to increase the vertical space above the content.
 
 {{ example({group: "styles", item: "layout", example: "layout-wrappers-l", html: true, open: true, size: "l"}) }}
 
@@ -96,6 +102,10 @@ The available widths are:
 
 {{ example({group: "styles", item: "layout", example: "one-quarter", html: true, open: true, size: "s"}) }}
 
+### Three-quarters
+
+{{ example({group: "styles", item: "layout", example: "three-quarters", html: true, open: true, size: "s"}) }}
+
 ### Example combinations
 
 {{ example({group: "styles", item: "layout", example: "combinations", html: true, open: true, size: "xl"}) }}
@@ -113,3 +123,16 @@ The desktop specific classes also allow you to set the width of the tablet break
 ### Nested grids
 
 {{ example({group: "styles", item: "layout", example: "nested", html: true, open: true, size: "m"}) }}
+
+## Override how elements display
+
+You can use display override classes if you need to override how elements display on the page.
+
+Use:
+
+- `govuk-!-display-block` to display as a block
+- `govuk-!-display-inline` to display inline
+- `govuk-!-display-inline-block` to display as an inline block
+- `govuk-!-display-none` to remove the element from the page
+
+You can also remove elements from the printed version of the page using `govuk-!-display-none-print`.

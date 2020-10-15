@@ -1,18 +1,17 @@
 ---
 title: Fieldset address group
 layout: layout-example.njk
-ignore_in_sitemap: true
 stylesheets:
 - address-wrapper.css
 ---
 
-{% from "input/macro.njk" import govukInput %}
-{% from "fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
 {% call govukFieldset({
   legend: {
     text: "What is your address?",
-    classes: "govuk-fieldset__legend--xl",
+    classes: "govuk-fieldset__legend--l",
     isPageHeading: true
   }
 }) %}

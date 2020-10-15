@@ -1,10 +1,9 @@
 ---
 title: Footer with secondary navigation
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "footer/macro.njk" import govukFooter %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {{ govukFooter({
   navigation: [

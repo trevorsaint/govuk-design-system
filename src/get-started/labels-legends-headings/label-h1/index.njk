@@ -1,23 +1,9 @@
 ---
-title: Labels, legends and headings
+title: Labels as page headings - Making labels and legends headings
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "input/macro.njk" import govukInput %}
-
-{{ govukInput({
-  label: {
-    text: "govuk-label--xl",
-    classes: "govuk-label--xl",
-    isPageHeading: true
-  },
-  hint: {
-    text: "This example shows an <h1> around a <label> with the class of govuk-label--xl"
-  },
-  id: "example",
-  name: "example"
-}) }}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
   label: {
@@ -28,6 +14,6 @@ ignore_in_sitemap: true
   hint: {
     text: "This example shows an <h1> around a <label> with the class of govuk-label--l"
   },
-  id: "example-2",
-  name: "example-2"
+  id: "example",
+  name: "example"
 }) }}

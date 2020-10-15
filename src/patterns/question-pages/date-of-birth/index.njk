@@ -1,13 +1,13 @@
 ---
-title: Question pages
+title: Date of birth – Question pages
 layout: layout-example-full-page.njk
 ---
 
 {% extends "example-wrappers/full-page.njk" %}
 
-{% from "back-link/macro.njk" import govukBackLink %}
-{% from "date-input/macro.njk" import govukDateInput %}
-{% from "button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -26,7 +26,7 @@ layout: layout-example-full-page.njk
             legend: {
               text: "What is your date of birth?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {

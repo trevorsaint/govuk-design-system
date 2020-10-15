@@ -1,10 +1,9 @@
 ---
 title: National insurance number input with errors
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "input/macro.njk" import govukInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
   label: {
@@ -16,8 +15,9 @@ ignore_in_sitemap: true
   classes: "govuk-input--width-10",
   id: "national-insurance-number",
   name: "national-insurance-number",
-  value: "Not a National Insurance number",
+  value: "12345678",
   errorMessage: {
     text: "Enter a National Insurance number in the correct format"
-  }
+  },
+  spellcheck: false
 }) }}

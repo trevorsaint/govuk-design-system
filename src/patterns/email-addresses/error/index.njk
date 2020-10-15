@@ -1,10 +1,9 @@
 ---
 title: Email input with errors
 layout: layout-example.njk
-ignore_in_sitemap: true
 ---
 
-{% from "input/macro.njk" import govukInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
   label: {
@@ -17,7 +16,9 @@ ignore_in_sitemap: true
   name: "email",
   type: "email",
   value: "Not an email address",
+  autocomplete: "email",
   errorMessage: {
     text: "Enter an email address in the correct format, like name@example.com"
-  }
+  },
+  spellcheck: false
 }) }}

@@ -1,18 +1,17 @@
 ---
 title: Multiple text inputs Addresses
 layout: layout-example.njk
-ignore_in_sitemap: true
 stylesheets:
 - address-wrapper.css
 ---
 
-{% from "input/macro.njk" import govukInput %}
-{% from "fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
 {% call govukFieldset({
   legend: {
     text: "What is your address?",
-    classes: "govuk-fieldset__legend--xl",
+    classes: "govuk-fieldset__legend--l",
     isPageHeading: true
   }
 }) %}
@@ -22,7 +21,8 @@ stylesheets:
       html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
     },
     id: "address-line-1",
-    name: "address-line-1"
+    name: "address-line-1",
+    autocomplete: "address-line1"
   }) }}
 
   {{ govukInput({
@@ -30,7 +30,8 @@ stylesheets:
       html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
     },
     id: "address-line-2",
-    name: "address-line-2"
+    name: "address-line-2",
+    autocomplete: "address-line2"
   }) }}
 
   {{ govukInput({
@@ -39,7 +40,8 @@ stylesheets:
     },
     classes: "govuk-!-width-two-thirds",
     id: "address-town",
-    name: "address-town"
+    name: "address-town",
+    autocomplete: "address-level2"
   }) }}
 
   {{ govukInput({
@@ -57,7 +59,8 @@ stylesheets:
     },
     classes: "govuk-input--width-10",
     id: "address-postcode",
-    name: "address-postcode"
+    name: "address-postcode",
+    autocomplete: "postal-code"
   }) }}
 
 {% endcall %}

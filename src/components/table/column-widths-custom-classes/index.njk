@@ -1,11 +1,11 @@
 ---
-title: Table
+title: Custom width using custom classes – Table
 layout: layout-example.njk
 stylesheets:
 - column-width-custom-classes.css
 ---
 
-{% from "table/macro.njk" import govukTable %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
 
 {{ govukTable({
   caption: "Month you apply",
@@ -13,15 +13,15 @@ stylesheets:
   head: [
     {
       text: "Date",
-      classes: 'my-custom-class'
+      classes: 'app-custom-class'
     },
     {
       text: "Rate for vehicles",
-      classes: 'my-custom-class'
+      classes: 'app-custom-class'
     },
     {
       text: "Rate for bicycles",
-      classes: 'my-custom-class'
+      classes: 'app-custom-class'
     }
   ],
   rows: [
@@ -33,7 +33,7 @@ stylesheets:
         text: "£109.80 per week"
       },
       {
-        text: "59.10 per week"
+        text: "£59.10 per week"
       }
     ],
     [

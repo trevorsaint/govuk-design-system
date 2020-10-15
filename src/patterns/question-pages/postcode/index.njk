@@ -1,14 +1,13 @@
 ---
 title: Postcode – Question pages
 layout: layout-example-full-page.njk
-ignore_in_sitemap: true
 ---
 
 {% extends "example-wrappers/full-page.njk" %}
 
-{% from "back-link/macro.njk" import govukBackLink %}
-{% from "input/macro.njk" import govukInput %}
-{% from "button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -24,7 +23,7 @@ ignore_in_sitemap: true
         label: {
           text: "What is your home postcode?",
           isPageHeading: true,
-          classes: "govuk-label--xl"
+          classes: "govuk-label--l"
         },
         classes: "govuk-input--width-10",
         id: "postcode",

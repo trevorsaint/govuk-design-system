@@ -12,8 +12,6 @@ layout: layout-pane.njk
 
 Help users enter or select a date.
 
-{{ example({group: "patterns", item: "dates", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
-
 ## When to use this pattern
 
 Follow this pattern whenever you need users to provide or select a date as part of your&nbsp;service.
@@ -34,7 +32,7 @@ In some cases you might need users to pick a date from a given selection.
 
 Ask for memorable dates, like dates of birth, using the [date input](../../components/date-input) component.
 
-{{ example({group: "patterns", item: "dates", example: "default", html: true, nunjucks: true, open: true, size: "s"}) }}
+{{ example({group: "patterns", item: "dates", example: "default", html: true, nunjucks: true, open: false, size: "s"}) }}
 
 ### Asking for dates from documents and cards
 
@@ -64,26 +62,11 @@ Only use a calendar control if users need to:
 
 Never make a calendar control that depends on JavaScript as the only input option.&nbsp;Allow users to enter the date into a text input as well as use the control.
 
-### How to check that dates are valid
-
-To check that the dates users give you are valid, make sure that:
-
-- it’s a real date, for example, not 54 July
-- past dates are in the past
-- future dates are in the future
-- the first date in a date range is before the second
-
 ### How to write dates
 
 See the [GOV.UK style for writing dates](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#dates) and [date ranges]( https://www.gov.uk/guidance/content-design/writing-for-gov-uk#date-ranges).
 
-### Error messages
-
-Error messages should be styled like this:
-
-{{ example({group: "patterns", item: "dates", example: "error", html: true, nunjucks: true, open: false, size: "s"}) }}
-
-Make sure errors follow the guidance in [date input](/components/date-input/#error-messages) and have specific error messages for specific error states.
+If you give an example date, use 13 or more for the day and 9 or less for the month - for example ‘27 3 2007’. This helps users enter the date in the correct order and shows them they do not need to include leading zeroes.
 
 ## Research on this pattern
 

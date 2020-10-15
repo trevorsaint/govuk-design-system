@@ -3,7 +3,7 @@ title: Email addresses
 layout: layout-example.njk
 ---
 
-{% from "input/macro.njk" import govukInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
   label: {
@@ -14,5 +14,7 @@ layout: layout-example.njk
   },
   id: "email",
   name: "email",
-  type: "email"
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false
 }) }}

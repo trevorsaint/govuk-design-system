@@ -6,24 +6,22 @@ stylesheets:
 - styles/page-template/block-areas/block-areas-annotate.css
 ---
 
-{% extends "template.njk" %}
-
-{% set bodyClasses = "app-example-page" %}
+{% extends "govuk/template.njk" %}
 
 {% block head -%}
   {# Since we’re not extending the Design System layout we need to add this manually #}
   <meta name="robots" content="noindex, nofollow">
 
   <!--[if !IE 8]><!-->
-    <link href="{{ getFingerprint('stylesheets/main.css') }}" rel="stylesheet" media="all" />
+    <link href="{{ getFingerprint('stylesheets/main.css') }}" rel="stylesheet" media="all">
   <!--<![endif]-->
   <!--[if lt IE 9]>
-    <link href="{{ getFingerprint('stylesheets/main-ie8.css') }}" rel="stylesheet" media="all" />
+    <link href="{{ getFingerprint('stylesheets/main-ie8.css') }}" rel="stylesheet" media="all">
     <script src="{{ getFingerprint('javascripts/head-ie8.js') }}"></script>
   <![endif]-->
   <script src="/javascripts/vendor/modernizr.js"></script>
   {% for stylesheet in stylesheets %}
-    <link href="{{ getFingerprint(stylesheet) }}" rel="stylesheet" media="all" />
+    <link href="{{ getFingerprint(stylesheet) }}" rel="stylesheet" media="all">
   {%- endfor %}
 {%- endblock %}
 
@@ -61,7 +59,7 @@ stylesheets:
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: beforeContent</span>
     {{ super() }}
-    {% from "back-link/macro.njk" import govukBackLink %}
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
     {{ govukBackLink({
       href: "/",

@@ -3,7 +3,7 @@ title: Checkbox items with hint
 layout: layout-example.njk
 ---
 
-{% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {{ govukCheckboxes({
   idPrefix: "nationality",
@@ -12,7 +12,7 @@ layout: layout-example.njk
     legend: {
       text: "What is your nationality?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
+      classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {
